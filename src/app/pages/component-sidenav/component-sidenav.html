@@ -1,0 +1,32 @@
+<md-sidenav-container class="docs-component-viewer-sidenav-container">
+  <md-sidenav #sidenav class="docs-component-viewer-sidenav" [opened]="!isScreenSmall()" [mode]="isScreenSmall() ? 'over' : 'side'">
+    <span *ngIf="bwc==1">
+    <nav *ngFor="let category of docItems.gtfic() | slice:2:3">
+      <h3>{{category.name}}</h3>
+      <ul>
+        <li *ngFor="let component of category.items">
+          <a [routerLink]="['/skills/skill/', component.id]"
+             routerLinkActive="docs-component-viewer-sidenav-item-selected">
+            {{component.name}}
+          </a>
+        </li>
+      </ul>
+    </nav>
+    </span>
+    <nav *ngFor="let category of docItems.gtfic() | slice:0:2">
+      <h3>{{category.name}}</h3>
+      <ul>
+        <li *ngFor="let component of category.items">
+          <a [routerLink]="['/skills/skill/', component.id]" routerLinkActive="docs-component-viewer-sidenav-item-selected">
+            {{component.name}}
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </md-sidenav>
+  <div class="docs-component-sidenav-content">
+    <component-page-header (toggleSidenav)="sidenav.toggle()"></component-page-header>
+    <router-outlet></router-outlet>
+    <app-footer></app-footer>
+  </div>
+</md-sidenav-container>

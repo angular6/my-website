@@ -1,0 +1,25 @@
+<div class="docs-component-category-list">
+
+<span *ngIf="bwc==1" >
+
+  <md-card
+      *ngFor="let x of my_skills.gtfic() | slice:2:3"
+      class="docs-component-category-list-card"
+      [routerLink]="['/skills/category/', x.id]">
+    <md-card-title>{{x.name}}</md-card-title>
+    <p class="docs-component-category-list-card-summary">{{x.summary}}</p>
+    <div class="docs-component-category-list-card-image"
+         [style.backgroundImage]="'url(\'../../../assets/img/component-categories/' + x.id +'.svg\')'">
+    </div>
+  </md-card>
+
+</span>
+
+  <md-card
+      *ngFor="let x of my_skills.gtfic() | slice:0:2"
+      class="docs-component-category-list-card"
+      [routerLink]="['/skills/category/', x.id]">
+    <md-card-title>{{x.name}}</md-card-title>
+
+  </md-card>
+</div>

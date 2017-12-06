@@ -1,0 +1,13 @@
+<md-tab-group class="docs-component-viewer-tabbed-content" (selectedIndexChange)="overviewViewer.releadLiveExamples()">
+  <span style="display: none;">
+  <md-tab label="MY EXPERIENCE">
+    <doc-viewer #overviewViewer
+        documentUrl="/assets/documents/skills/{{componentDocItem.id}}.html"
+        class="docs-component-view-text-content">
+    </doc-viewer>
+  </md-tab>
+</span>
+  <md-tab label="ACHIEVEMENTS" *ngIf="isUserLoggedIn==1">
+    <doc-viewer documentUrl="/assets/documents/achievements/{{componentDocItem.id}}.html" class="docs-component-view-text-content"></doc-viewer>
+  </md-tab>
+</md-tab-group>

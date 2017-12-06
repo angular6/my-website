@@ -1,0 +1,45 @@
+
+:host {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+$m: #4CAF50;
+
+div {
+	line-height: 33px;
+}
+
+pre {
+	line-height: 14px;
+}
+
+
+
+.docs-guide-list {
+  margin: 50px;
+  flex-grow: 1;
+}
+
+.docs-guide-item, .docs-guide-item:hover {
+  text-decoration: none;
+}
+
+.greentable td:nth-child(1){
+	color: $m;
+	padding-right: 40px;
+}
+
+.greentable {
+
+	padding-bottom: 40px;
+}
+
+.green {
+	color: $m;
+}
+
+.accomplishments {
+	color: $m;
+}

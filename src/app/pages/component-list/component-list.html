@@ -1,0 +1,10 @@
+<div class="docs-component-category-list">
+
+<md-card
+      *ngFor="let x of category.items"
+      class="docs-component-category-list-card"
+      [routerLink]="['/skills/skill/', x.id]">
+    <md-card-title>{{x.name}}</md-card-title>
+  </md-card>
+
+</div>

@@ -1,0 +1,99 @@
+@import '~@angular/material/theming';
+@import './app-theme';
+@import './styles/api';
+@import './styles/markdown';
+@import './styles/tables';
+
+// Include material core styles.
+@include mat-core();
+
+// Define the light theme.
+$primary: mat-palette($mat-green);
+$accent:  mat-palette($mat-green, A200, A100, A400);
+
+$theme: mat-light-theme($primary, $accent);
+@include angular-material-theme($theme);
+@include docs-app-theme($theme);
+
+body {
+  font-family: "Roboto","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+  margin: 0;
+}
+
+.docs-button[md-button], .docs-button[md-raised-button] {
+  text-transform: uppercase;
+}
+
+h1, h2 {
+  font-weight: 400;
+}
+
+pre {
+  // Pre elements won't wrap text by default and can exceed the boundaries of their parent element.
+  // This adds extra scroll space when visiting the docs mobile. Pre-wrapping the code examples
+  // will ensure that the code never exceeds the page width.
+  white-space: pre-wrap;
+}
+
+.docs-primary-header {
+  padding-left: 20px;
+
+  h1 {
+    font-size: 30px;
+    font-weight: 300;
+    margin: 0;
+    padding: 50px;
+  }
+}
+
+code {
+  font-size: 90%;
+}
+
+.basic-btn {
+    background: #3B8598;
+    color:white;
+}
+
+input.txt {
+    background:#fff !important;
+    padding:1.3em 1em;
+    font-size:1.3em;
+    border: 1px solid #BBBBBB;
+}
+
+.loading {
+  width: 30px;
+  height: 30px;
+  border: 5px solid #ccc;
+  position: fixed;
+  left: 50%;
+  margin-left: -20px;
+  top: 50%;
+  margin-top: -20px;
+  border-radius: 50%;
+}
+
+
+.loading:after {
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 10px;
+  background: #E2E4E6;
+  top: 10px;
+  left: -5px;
+  animation: spin 1.2s infinite;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.mat-tab-body.mat-tab-body-active{
+    overflow-y: hidden !important;
+  }
+
+

@@ -1,0 +1,12 @@
+<nav class="docs-navbar">
+  <a md-button class="docs-button" routerLink="/" aria-label="My App">
+    <img class="docs-angular-logo" src="../../../assets/img/homepage/logo.svg" alt="Kevin Norton">
+    <span>Kevin</span>
+  </a>
+  <a md-button class="docs-button" routerLink="skills">Skills</a>
+  <a md-button class="docs-button" routerLink="my_dashboard" *ngIf="isUserLoggedIn==1">My Dashboard</a>
+  <a md-button class="docs-button" routerLink="health" *ngIf="isUserLoggedIn==1">Health</a>
+  <a md-button class="docs-button" routerLink="about-me">About</a>
+  <a md-button class="docs-button" href="http://github.com/angular6" target="blank">Github</a>
+  <a href="#"></a>
+</nav>
